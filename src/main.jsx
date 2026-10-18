@@ -466,7 +466,35 @@ function Invitation({ onReset, t, languageSelector }) {
           </form>}
       </section>
 
-      <footer className="footer"><Heart size={17} /><p>Made with love, for a day to remember.</p><span>EVERAFTER · DIGITAL INVITATIONS</span><button className="footer-reset" onClick={onReset}>Replay the opening</button></footer>
+      <footer className="footer"><Heart size={17} /><p>Made with love, for a day to remember.</p><span>EVERAFTER · DIGITAL INVITATIONS</span><button className="footer-reset" onClick={onReset}>Replay the opening</button>
+      
+<section className="design-cta">
+  <p className="eyebrow">HAVE A SPECIAL OCCASION?</p>
+
+  <h2>
+    Want a Website <em>Like This?</em>
+  </h2>
+
+  <p>
+    Wedding invitations, birthday websites, event pages, and
+    more — let's create something beautiful for your special day.
+  </p>
+
+  <a
+    className="whatsapp-cta"
+    href="https://wa.me/91YOURNUMBER?text=Hi%21%20I%20saw%20your%20wedding%20invitation%20website%20and%20I%27m%20interested%20in%20designing%20a%20similar%20website.%20Could%20you%20share%20the%20details%20and%20pricing%3F"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span className="whatsapp-icon">☏</span>
+    Design My Website
+  </a>
+
+  <p className="whatsapp-caption">
+    Click to chat with me on WhatsApp
+  </p>
+</section>
+</footer>
 
       <AnimatePresence>{galleryPhoto && <motion.div className="lightbox" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setGalleryPhoto(null)}><button aria-label="Close photo" className="lightbox-close"><X /></button><motion.img src={galleryPhoto} alt="Expanded couple memory" initial={{ scale: .94 }} animate={{ scale: 1 }} onClick={e => e.stopPropagation()} /></motion.div>}</AnimatePresence>
     </motion.main>
