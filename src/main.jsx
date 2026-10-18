@@ -168,8 +168,8 @@ function Invitation({ onReset, t, languageSelector }) {
       <nav className="site-nav">
         <a className="brand" href="#top" aria-label="EverAfter home"><span className="brand-mark"><Heart size={20} /></span><span>EverAfter<small>DIGITAL INVITATIONS</small></span></a>
         <div className="opening-language">
-  {languageSelector}
-</div>
+          {languageSelector}
+        </div>
         <div className="nav-links"><a href="#story">Our story</a><a href="#details">The day</a><a href="#gallery">Gallery</a><a href="#location">Location</a></div>
         <button className="outline-button nav-save" onClick={saveDate}>Save the date <CalendarDays size={14} /></button>
       </nav>
