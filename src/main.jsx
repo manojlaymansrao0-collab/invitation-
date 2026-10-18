@@ -20,6 +20,54 @@ const event = {
   message: "Two hearts, one beautiful journey. We'd be delighted to celebrate this new chapter with you."
 };
 
+// Add the translations dictionary here
+const translations = {
+  en: {
+    language: "Language",
+    openInvitation: "OPEN INVITATION",
+    navStory: "Our story",
+    navDay: "The day",
+    navGallery: "Gallery",
+    navLocation: "Location",
+    guestName: "Your name",
+    namePlaceholder: "Enter your name",
+    accepts: "Joyfully accepts",
+    declines: "Regretfully declines",
+    sendResponse: "SEND RESPONSE",
+    thankYou: "Thank you"
+  },
+
+  te: {
+    language: "భాష",
+    openInvitation: "ఆహ్వానాన్ని తెరవండి",
+    navStory: "మా ప్రేమకథ",
+    navDay: "వేడుక రోజు",
+    navGallery: "చిత్రాలు",
+    navLocation: "వేదిక",
+    guestName: "మీ పేరు",
+    namePlaceholder: "మీ పేరును నమోదు చేయండి",
+    accepts: "తప్పకుండా వస్తాను",
+    declines: "రాలేకపోతున్నాను",
+    sendResponse: "సమాధానం పంపండి",
+    thankYou: "ధన్యవాదాలు"
+  },
+
+  hi: {
+    language: "भाषा",
+    openInvitation: "निमंत्रण खोलें",
+    navStory: "हमारी कहानी",
+    navDay: "समारोह का दिन",
+    navGallery: "तस्वीरें",
+    navLocation: "स्थान",
+    guestName: "आपका नाम",
+    namePlaceholder: "अपना नाम लिखें",
+    accepts: "खुशी से आएँगे",
+    declines: "आना संभव नहीं है",
+    sendResponse: "जवाब भेजें",
+    thankYou: "धन्यवाद"
+  }
+};
+
 const photos = [
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85",
   "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=85",
@@ -113,6 +161,9 @@ function Invitation({ onReset }) {
     <motion.main className="invitation-page" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.1 }}>
       <nav className="site-nav">
         <a className="brand" href="#top" aria-label="EverAfter home"><span className="brand-mark"><Heart size={20} /></span><span>EverAfter<small>DIGITAL INVITATIONS</small></span></a>
+        <div className="opening-language">
+  {languageSelector}
+</div>
         <div className="nav-links"><a href="#story">Our story</a><a href="#details">The day</a><a href="#gallery">Gallery</a><a href="#location">Location</a></div>
         <button className="outline-button nav-save" onClick={saveDate}>Save the date <CalendarDays size={14} /></button>
       </nav>
@@ -218,6 +269,29 @@ function Invitation({ onReset }) {
 
 function App() {
   const [opened, setOpened] = useState(false);
+  const [language, setLanguage] = useState(
+  () => localStorage.getItem("everafter-language") || "en"
+);
+
+const t = translations[language] || translations.en;
+
+useEffect(() => {
+  localStorage.setItem("everafter-language", language);
+  document.documentElement.lang = language;
+}, [language]);
+
+const languageSelector = (
+  <select
+    value={language}
+    onChange={(e) => setLanguage(e.target.value)}
+    aria-label={t.language}
+    className="language-select"
+  >
+    <option value="en">English</option>
+    <option value="te">తెలుగు</option>
+    <option value="hi">हिन्दी</option>
+  </select>
+);
   return (
     <div className="app-shell">
       <div className="ambient ambient-one" /><div className="ambient ambient-two" />
@@ -226,9 +300,16 @@ function App() {
         {!opened ? <motion.section className="opening-screen" key="opening" exit={{ opacity: 0, scale: 1.025, filter: "blur(8px)" }} transition={{ duration: .7 }}>
           <header className="opening-brand"><span className="brand-mark"><Heart size={20} /></span><span>EverAfter<small>DIGITAL INVITATIONS</small></span></header>
           <div className="opening-copy"><p className="eyebrow">A MOMENT MADE JUST FOR YOU</p><h1>Some moments<br />deserve <em>their own story.</em></h1><p>A beautiful little surprise is waiting for you.</p></div>
-          <Envelope onOpen={() => setOpened(true)} />
+          <Envelope onOpen={() => setOpened(true)} t={t} />
           <div className="opening-footer"><span>AN INVITATION TO REMEMBER</span><span>SCROLL LESS. FEEL MORE.</span></div>
-        </motion.section> : <motion.div key="invitation" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .7 }}><Invitation onReset={() => { setOpened(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} /></motion.div>}
+        </motion.section> : <motion.div key="invitation" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .7 }}><Invitation
+  onReset={() => {
+    setOpened(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+  t={t}
+  languageSelector={languageSelector}
+/></motion.div>}
       </AnimatePresence>
     </div>
   );
