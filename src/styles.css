@@ -1172,7 +1172,7 @@ input:focus-visible {
 }
 .opening-language {
   position: absolute;
-  top: 54px;
+  top: 14px;
   right: 24px;
   z-index: 20;
 }
