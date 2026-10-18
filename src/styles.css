@@ -1206,30 +1206,77 @@ input:focus-visible {
     }
 }
 
-<section className="design-cta">
-  <p className="eyebrow">HAVE A SPECIAL OCCASION?</p>
 
-  <h2>
-    Want a Website <em>Like This?</em>
-  </h2>
+/* Website design promotion */
+.design-cta {
+  padding: 65px 24px;
+  text-align: center;
+  background: #f5eee3;
+  color: #29251f;
+  border-top: 1px solid #e4d5bf;
+}
 
-  <p>
-    Wedding invitations, birthday websites, event pages, and
-    more — let's create something beautiful for your special day.
-  </p>
+.design-cta .eyebrow {
+  color: #967548;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
 
-  <a
-    className="whatsapp-cta"
-    href="https://wa.me/91YOURNUMBER?text=Hi%21%20I%20saw%20your%20wedding%20invitation%20website%20and%20I%27m%20interested%20in%20designing%20a%20similar%20website.%20Could%20you%20share%20the%20details%20and%20pricing%3F"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span className="whatsapp-icon">☏</span>
-    Design My Website
-  </a>
+.design-cta h2 {
+  margin: 18px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 500;
+}
 
-  <p className="whatsapp-caption">
-    Click to chat with me on WhatsApp
-  </p>
-</section>
+.design-cta h2 em {
+  color: #9b7746;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+
+.design-cta > p:not(.eyebrow):not(.whatsapp-caption) {
+  max-width: 480px;
+  margin: 0 auto 28px;
+  color: #766b5c;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 25px;
+  background: #25D366;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.whatsapp-cta:hover {
+  background: #1eae54;
+  transform: translateY(-3px);
+}
+
+.whatsapp-icon {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.whatsapp-caption {
+  margin-top: 14px;
+  color: #8b806f;
+  font-size: 10px;
+}
+
 
