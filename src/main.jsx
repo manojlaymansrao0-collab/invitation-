@@ -115,7 +115,7 @@ function Envelope({ onOpen }) {
   );
 }
 
-function Invitation({ onReset }) {
+function Invitation({ onReset, t, languageSelector }) {
   const [rsvp, setRsvp] = useState("");
   const [guestName, setGuestName] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -299,6 +299,9 @@ const languageSelector = (
       <AnimatePresence mode="wait">
         {!opened ? <motion.section className="opening-screen" key="opening" exit={{ opacity: 0, scale: 1.025, filter: "blur(8px)" }} transition={{ duration: .7 }}>
           <header className="opening-brand"><span className="brand-mark"><Heart size={20} /></span><span>EverAfter<small>DIGITAL INVITATIONS</small></span></header>
+          <div className="opening-language">
+  {languageSelector}
+</div>
           <div className="opening-copy"><p className="eyebrow">A MOMENT MADE JUST FOR YOU</p><h1>Some moments<br />deserve <em>their own story.</em></h1><p>A beautiful little surprise is waiting for you.</p></div>
           <Envelope onOpen={() => setOpened(true)} t={t} />
           <div className="opening-footer"><span>AN INVITATION TO REMEMBER</span><span>SCROLL LESS. FEEL MORE.</span></div>
