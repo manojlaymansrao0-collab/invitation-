@@ -78,38 +78,44 @@ const audio = {
 
 }
 
-function Countdown() {
+function Countdown({ t }) {
   const [now, setNow] = useState(Date.now());
   useEffect(() => {
     const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
   }, []);
   const distance = Math.max(0, new Date(event.dateISO).getTime() - now);
-  const units = [
-    ["Days", Math.floor(distance / 86400000)],
-    ["Hours", Math.floor((distance / 3600000) % 24)],
-    ["Minutes", Math.floor((distance / 60000) % 60)],
-    ["Seconds", Math.floor((distance / 1000) % 60)]
-  ];
+const units = [
+  [t.days, Math.floor(distance / 86400000)],
+  [t.hours, Math.floor((distance / 3600000) % 24)],
+  [t.minutes, Math.floor((distance / 60000) % 60)],
+  [t.seconds, Math.floor((distance / 1000) % 60)]
+];
   return <div className="countdown">{units.map(([label, value]) =>
     <div className="count-unit" key={label}><strong>{String(value).padStart(2, "0")}</strong><span>{label}</span></div>
   )}</div>;
 }
 
-function Envelope({ onOpen }) {
+function Envelope({ onOpen, t }) { {
   return (
     <motion.div className="envelope-scene" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
       <div className="envelope-glow" />
-      <motion.button className="envelope" onClick={onOpen} aria-label="Open the invitation" whileHover={{ scale: 1.035, y: -5 }} whileTap={{ scale: 0.98 }}>
+      <motion.button className="envelope" onClick={onOpen} aria-label={t.openinvitation} whileHover={{ scale: 1.035, y: -5 }} whileTap={{ scale: 0.98 }}>
         <div className="envelope-back" />
-        <div className="envelope-letter"><span className="letter-monogram">A <i>&</i> M</span><span className="letter-line" /><span className="letter-small">YOU ARE INVITED</span></div>
+        <div className="envelope-letter"><span className="letter-monogram">A <i>&</i> M</span><span className="letter-line" /><span className="letter-small">{t.envelopeLabel}</span></div>
         <div className="envelope-left" />
         <div className="envelope-right" />
         <div className="envelope-bottom" />
         <div className="envelope-flap" />
         <div className="wax-seal"><Heart size={21} strokeWidth={1.3} /></div>
       </motion.button>
-      <motion.p className="open-hint" animate={{ opacity: [0.55, 1, 0.55] }} transition={{ duration: 2.4, repeat: Infinity }}>A little something, just for you</motion.p>
+      <motion.p
+  className="open-hint"
+  animate={{ opacity: [0.55, 1, 0.55] }}
+  transition={{ duration: 2.4, repeat: Infinity }}
+>
+  {t.envelopeHint}
+</motion.p>
       <button className="text-button" onClick={onOpen}>OPEN INVITATION <ArrowRight size={14} /></button>
     </motion.div>
   );
@@ -217,7 +223,7 @@ function Invitation({ onReset, t, languageSelector }) {
         <p className="section-copy">{event.message}</p>
         <div className="ornament"><span /><Heart size={15} /><span /></div>
         <div className="count-label">THE COUNTDOWN TO OUR FOREVER</div>
-        <Countdown />
+        <Countdown t={ t }/>
       </section>
 
       <section className="details-section" id="details">
