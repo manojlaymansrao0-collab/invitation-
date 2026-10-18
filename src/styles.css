@@ -1037,7 +1037,7 @@ input:focus-visible {
         display: none
     }
 
-    .nav-save {
+    .-save {
         font-size: 9px;
         padding: 9px
     }
@@ -1170,37 +1170,38 @@ input:focus-visible {
         transition-duration: .01ms !important
     }
 }
+
 .opening-language {
-  position: absolute;
-  top: 14px;
-  right: 24px;
-  z-index: 20;
+    position: absolute;
+    top: 75px;
+    right: 24px;
+    z-index: 20;
 }
 
 .language-select {
-  padding: 9px 12px;
-  border: 1px solid rgba(190, 160, 110, 0.55);
-  border-radius: 8px;
-  background: #201b19;
-  color: #fff;
-  font: inherit;
-  cursor: pointer;
-  max-width: 140px;
+    padding: 9px 12px;
+    border: 1px solid rgba(190, 160, 110, 0.55);
+    border-radius: 8px;
+    background: #201b19;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    max-width: 100px;
 }
 
 .language-select option {
-  background: #201b19;
-  color: #fff;
+    background: #201b19;
+    color: #fff;
 }
 
 @media (max-width: 600px) {
-  .opening-language {
-    top: 14px;
-    right: 14px;
-  }
+    .opening-language {
+        top: 14px;
+        right: 14px;
+    }
 
-  .language-select {
-    max-width: 115px;
-    padding: 7px;
-  }
+    .language-select {
+        max-width: 115px;
+        padding: 7px;
+    }
 }
