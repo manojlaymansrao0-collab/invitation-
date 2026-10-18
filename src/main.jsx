@@ -482,7 +482,7 @@ function Invitation({ onReset, t, languageSelector }) {
 
   <a
     className="whatsapp-cta"
-    href="https://wa.me/91YOURNUMBER?text=Hi%21%20I%20saw%20your%20wedding%20invitation%20website%20and%20I%27m%20interested%20in%20designing%20a%20similar%20website.%20Could%20you%20share%20the%20details%20and%20pricing%3F"
+    href="https://wa.me/918522833095?text=Hi%21%20I%20saw%20your%20wedding%20invitation%20website%20and%20I%27m%20interested%20in%20designing%20a%20similar%20website.%20Could%20you%20share%20the%20details%20and%20pricing%3F"
     target="_blank"
     rel="noopener noreferrer"
   >
