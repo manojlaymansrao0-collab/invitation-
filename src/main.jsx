@@ -21,10 +21,13 @@ const event = {
 };
 
 // Add the translations dictionary here
+
 const translations = {
   en: {
     language: "Language",
     openInvitation: "OPEN INVITATION",
+    envelopeLabel: "YOU ARE INVITED",
+    envelopeHint: "A little something, just for you",
     navStory: "Our story",
     navDay: "The day",
     navGallery: "Gallery",
@@ -34,12 +37,66 @@ const translations = {
     accepts: "Joyfully accepts",
     declines: "Regretfully declines",
     sendResponse: "SEND RESPONSE",
-    thankYou: "Thank you"
+    thankYou: "Thank you",
+    days: "Days",
+    hours: "Hours",
+    minutes: "Minutes",
+    seconds: "Seconds",
+    saveDate: "Save the date",
+    openingEyebrow: "A MOMENT MADE JUST FOR YOU",
+    openingTitle: "Some moments deserve",
+    openingTitleEm: "their own story.",
+    openingDescription: "A beautiful little surprise is waiting for you.",
+    openingFooter: "AN INVITATION TO REMEMBER",
+    openingFooterRight: "SCROLL LESS. FEEL MORE.",
+    brandSubtitle: "DIGITAL INVITATIONS",
+    heroEyebrow: "TOGETHER WITH OUR FAMILIES",
+    heroSubtitle: "INVITE YOU TO CELEBRATE OUR WEDDING",
+    scrollExplore: "SCROLL TO EXPLORE",
+    storyEyebrow: "A NOTE FROM OUR HEARTS",
+    storyTitle: "Every love story is beautiful.",
+    storyTitleEm: "Ours is our favourite.",
+    countdownTitle: "THE COUNTDOWN TO OUR FOREVER",
+    detailsEyebrow: "PLEASE JOIN US",
+    detailsTitle: "The day we've been",
+    detailsTitleEm: "dreaming of",
+    celebration: "THE CELEBRATION",
+    dateLabel: "DATE",
+    timeLabel: "TIME",
+    venueLabel: "VENUE",
+    directions: "GET DIRECTIONS",
+    addCalendar: "ADD TO CALENDAR",
+    galleryEyebrow: "LITTLE MOMENTS, BIG MEMORIES",
+    galleryTitle: "A glimpse into",
+    galleryTitleEm: "our world",
+    locationEyebrow: "WE CAN'T WAIT TO SEE YOU",
+    locationTitle: "Meet us where",
+    locationTitleEm: "the magic happens.",
+    openMaps: "OPEN IN MAPS",
+    rsvpEyebrow: "YOUR PRESENCE IS OUR PRESENT",
+    rsvpTitle: "Will you join",
+    rsvpTitleEm: "our celebration?",
+    rsvpQuestion: "Can you make it?",
+    demoResponse: "Your response has been recorded in this demo only.",
+    demoNote: "Demo only: responses are not stored or sent to the hosts yet.",
+    changeResponse: "CHANGE RESPONSE",
+    musicOn: "Music on",
+    musicOff: "Music off",
+    musicError: "Music could not play. Check that public/bg2.mp3 exists and is a valid audio file.",
+    shareCopied: "Invitation link copied!",
+    shareFallback: "Copy this page URL to share the invitation.",
+    footerMessage: "Made with love, for a day to remember.",
+    footerBrand: "EVERAFTER · DIGITAL INVITATIONS",
+    replayOpening: "Replay the opening",
+    closePhoto: "Close photo",
+    photoAlt: "Couple memory"
   },
 
   te: {
     language: "భాష",
     openInvitation: "ఆహ్వానాన్ని తెరవండి",
+    envelopeLabel: "మీకు ఆహ్వానం",
+    envelopeHint: "మీ కోసం ఒక చిన్న కానుక",
     navStory: "మా ప్రేమకథ",
     navDay: "వేడుక రోజు",
     navGallery: "చిత్రాలు",
@@ -49,12 +106,66 @@ const translations = {
     accepts: "తప్పకుండా వస్తాను",
     declines: "రాలేకపోతున్నాను",
     sendResponse: "సమాధానం పంపండి",
-    thankYou: "ధన్యవాదాలు"
+    thankYou: "ధన్యవాదాలు",
+    days: "రోజులు",
+    hours: "గంటలు",
+    minutes: "నిమిషాలు",
+    seconds: "సెకన్లు",
+    saveDate: "తేదీని గుర్తుంచుకోండి",
+    openingEyebrow: "మీ కోసం ప్రత్యేకమైన క్షణం",
+    openingTitle: "కొన్ని క్షణాలకు",
+    openingTitleEm: "వాటి సొంత కథ ఉంటుంది.",
+    openingDescription: "మీ కోసం ఒక అందమైన చిన్న ఆశ్చర్యం ఎదురుచూస్తోంది.",
+    openingFooter: "మరపురాని ఆహ్వానం",
+    openingFooterRight: "ప్రతి క్షణాన్ని ఆస్వాదించండి",
+    brandSubtitle: "డిజిటల్ ఆహ్వానాలు",
+    heroEyebrow: "మా కుటుంబాల ఆశీర్వాదాలతో",
+    heroSubtitle: "మా వివాహ వేడుకకు మిమ్మల్ని ఆహ్వానిస్తున్నాము",
+    scrollExplore: "మరింత తెలుసుకోవడానికి స్క్రోల్ చేయండి",
+    storyEyebrow: "మా హృదయాల నుండి ఒక మాట",
+    storyTitle: "ప్రతి ప్రేమకథ అందమైనది.",
+    storyTitleEm: "మా కథ మాకు ఎంతో ఇష్టం.",
+    countdownTitle: "మా కొత్త జీవితానికి కౌంట్‌డౌన్",
+    detailsEyebrow: "దయచేసి విచ్చేయండి",
+    detailsTitle: "మేము కలలుగన్న",
+    detailsTitleEm: "ఆ ప్రత్యేకమైన రోజు",
+    celebration: "వేడుక",
+    dateLabel: "తేదీ",
+    timeLabel: "సమయం",
+    venueLabel: "వేదిక",
+    directions: "దారి చూపించండి",
+    addCalendar: "క్యాలెండర్‌లో చేర్చండి",
+    galleryEyebrow: "చిన్న క్షణాలు, పెద్ద జ్ఞాపకాలు",
+    galleryTitle: "మా ప్రపంచంలోని",
+    galleryTitleEm: "కొన్ని అందమైన క్షణాలు",
+    locationEyebrow: "మిమ్మల్ని కలవడానికి ఎదురుచూస్తున్నాము",
+    locationTitle: "మాయ జరిగే",
+    locationTitleEm: "ఆ అందమైన చోట కలుద్దాం.",
+    openMaps: "మ్యాప్‌లో తెరవండి",
+    rsvpEyebrow: "మీ రాకే మాకు కానుక",
+    rsvpTitle: "మా వేడుకలో",
+    rsvpTitleEm: "పాల్గొంటారా?",
+    rsvpQuestion: "మీరు రాగలరా?",
+    demoResponse: "మీ సమాధానం ఈ డెమోలో మాత్రమే నమోదు చేయబడింది.",
+    demoNote: "ఇది డెమో మాత్రమే. మీ సమాధానం నిల్వ చేయబడదు లేదా నిర్వాహకులకు పంపబడదు.",
+    changeResponse: "సమాధానాన్ని మార్చండి",
+    musicOn: "సంగీతం ఆన్",
+    musicOff: "సంగీతం ఆఫ్",
+    musicError: "సంగీతం ప్లే కావడం లేదు. public/bg2.mp3 ఫైల్ ఉందో లేదో తనిఖీ చేయండి.",
+    shareCopied: "ఆహ్వాన లింక్ కాపీ చేయబడింది!",
+    shareFallback: "ఆహ్వానాన్ని పంచుకోవడానికి ఈ పేజీ URLను కాపీ చేయండి.",
+    footerMessage: "మరపురాని రోజు కోసం ప్రేమతో.",
+    footerBrand: "ఎవర్ ఆఫ్టర్ · డిజిటల్ ఆహ్వానాలు",
+    replayOpening: "ప్రారంభ పేజీకి తిరిగి వెళ్లండి",
+    closePhoto: "చిత్రాన్ని మూసివేయండి",
+    photoAlt: "జంట జ్ఞాపకం"
   },
 
   hi: {
     language: "भाषा",
     openInvitation: "निमंत्रण खोलें",
+    envelopeLabel: "आप आमंत्रित हैं",
+    envelopeHint: "सिर्फ आपके लिए एक छोटा-सा उपहार",
     navStory: "हमारी कहानी",
     navDay: "समारोह का दिन",
     navGallery: "तस्वीरें",
@@ -64,9 +175,62 @@ const translations = {
     accepts: "खुशी से आएँगे",
     declines: "आना संभव नहीं है",
     sendResponse: "जवाब भेजें",
-    thankYou: "धन्यवाद"
+    thankYou: "धन्यवाद",
+    days: "दिन",
+    hours: "घंटे",
+    minutes: "मिनट",
+    seconds: "सेकंड",
+    saveDate: "तारीख़ याद रखें",
+    openingEyebrow: "आपके लिए एक खास पल",
+    openingTitle: "कुछ पल अपनी",
+    openingTitleEm: "अलग कहानी कहते हैं।",
+    openingDescription: "आपके लिए एक खूबसूरत सरप्राइज़ इंतज़ार कर रहा है।",
+    openingFooter: "एक यादगार निमंत्रण",
+    openingFooterRight: "हर पल को महसूस करें",
+    brandSubtitle: "डिजिटल निमंत्रण",
+    heroEyebrow: "हमारे परिवारों के साथ",
+    heroSubtitle: "हम आपको अपनी शादी में आमंत्रित करते हैं",
+    scrollExplore: "आगे देखने के लिए स्क्रॉल करें",
+    storyEyebrow: "हमारे दिल की बात",
+    storyTitle: "हर प्रेम कहानी खूबसूरत होती है।",
+    storyTitleEm: "हमारी कहानी हमें सबसे प्यारी है।",
+    countdownTitle: "हमारी नई शुरुआत की उलटी गिनती",
+    detailsEyebrow: "कृपया पधारें",
+    detailsTitle: "वह दिन जिसका हमने",
+    detailsTitleEm: "सपना देखा है",
+    celebration: "समारोह",
+    dateLabel: "तारीख़",
+    timeLabel: "समय",
+    venueLabel: "स्थान",
+    directions: "रास्ता देखें",
+    addCalendar: "कैलेंडर में जोड़ें",
+    galleryEyebrow: "छोटे पल, बड़ी यादें",
+    galleryTitle: "हमारी दुनिया की",
+    galleryTitleEm: "एक झलक",
+    locationEyebrow: "आपसे मिलने का इंतज़ार है",
+    locationTitle: "उस जगह मिलें जहाँ",
+    locationTitleEm: "जादू होता है।",
+    openMaps: "मैप में खोलें",
+    rsvpEyebrow: "आपकी उपस्थिति ही हमारा उपहार है",
+    rsvpTitle: "क्या आप",
+    rsvpTitleEm: "हमारे समारोह में आएँगे?",
+    rsvpQuestion: "क्या आप आ पाएँगे?",
+    demoResponse: "आपका जवाब केवल इस डेमो में दर्ज किया गया है।",
+    demoNote: "यह केवल डेमो है। जवाब सेव नहीं होगा और मेज़बानों को नहीं भेजा जाएगा।",
+    changeResponse: "जवाब बदलें",
+    musicOn: "संगीत चालू",
+    musicOff: "संगीत बंद",
+    musicError: "संगीत नहीं चल पाया। जाँचें कि public/bg2.mp3 फ़ाइल मौजूद है और सही है।",
+    shareCopied: "निमंत्रण लिंक कॉपी हो गया!",
+    shareFallback: "निमंत्रण साझा करने के लिए इस पेज का URL कॉपी करें।",
+    footerMessage: "एक यादगार दिन के लिए प्यार से बनाया गया।",
+    footerBrand: "एवरआफ्टर · डिजिटल निमंत्रण",
+    replayOpening: "शुरुआत फिर से देखें",
+    closePhoto: "तस्वीर बंद करें",
+    photoAlt: "जोड़े की याद"
   }
 };
+
 
 const photos = [
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85",
@@ -85,38 +249,65 @@ function Countdown({ t }) {
     return () => window.clearInterval(id);
   }, []);
   const distance = Math.max(0, new Date(event.dateISO).getTime() - now);
-const units = [
-  [t.days, Math.floor(distance / 86400000)],
-  [t.hours, Math.floor((distance / 3600000) % 24)],
-  [t.minutes, Math.floor((distance / 60000) % 60)],
-  [t.seconds, Math.floor((distance / 1000) % 60)]
-];
+  const units = [
+    [t.days, Math.floor(distance / 86400000)],
+    [t.hours, Math.floor((distance / 3600000) % 24)],
+    [t.minutes, Math.floor((distance / 60000) % 60)],
+    [t.seconds, Math.floor((distance / 1000) % 60)]
+  ];
   return <div className="countdown">{units.map(([label, value]) =>
     <div className="count-unit" key={label}><strong>{String(value).padStart(2, "0")}</strong><span>{label}</span></div>
   )}</div>;
 }
 
-function Envelope({ onOpen, t }) { {
+
+function Envelope({ onOpen, t }) {
   return (
-    <motion.div className="envelope-scene" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+    <motion.div
+      className="envelope-scene"
+      initial={{ opacity: 0, y: 22 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className="envelope-glow" />
-      <motion.button className="envelope" onClick={onOpen} aria-label={t.openinvitation} whileHover={{ scale: 1.035, y: -5 }} whileTap={{ scale: 0.98 }}>
+
+      <motion.button
+        className="envelope"
+        onClick={onOpen}
+        aria-label={t.openInvitation}
+        whileHover={{ scale: 1.035, y: -5 }}
+        whileTap={{ scale: 0.98 }}
+      >
         <div className="envelope-back" />
-        <div className="envelope-letter"><span className="letter-monogram">A <i>&</i> M</span><span className="letter-line" /><span className="letter-small">{t.envelopeLabel}</span></div>
+        <div className="envelope-letter">
+          <span className="letter-monogram">
+            A <i>&</i> M
+          </span>
+          <span className="letter-line" />
+          <span className="letter-small">
+            {t.envelopeLabel}
+          </span>
+        </div>
         <div className="envelope-left" />
         <div className="envelope-right" />
         <div className="envelope-bottom" />
         <div className="envelope-flap" />
-        <div className="wax-seal"><Heart size={21} strokeWidth={1.3} /></div>
+        <div className="wax-seal">
+          <Heart size={21} strokeWidth={1.3} />
+        </div>
       </motion.button>
+
       <motion.p
-  className="open-hint"
-  animate={{ opacity: [0.55, 1, 0.55] }}
-  transition={{ duration: 2.4, repeat: Infinity }}
->
-  {t.envelopeHint}
-</motion.p>
-      <button className="text-button" onClick={onOpen}>OPEN INVITATION <ArrowRight size={14} /></button>
+        className="open-hint"
+        animate={{ opacity: [0.55, 1, 0.55] }}
+        transition={{ duration: 2.4, repeat: Infinity }}
+      >
+        {t.envelopeHint}
+      </motion.p>
+
+      <button className="text-button" onClick={onOpen}>
+        {t.openInvitation} <ArrowRight size={14} />
+      </button>
     </motion.div>
   );
 }
@@ -170,8 +361,17 @@ function Invitation({ onReset, t, languageSelector }) {
         <div className="opening-language">
           {languageSelector}
         </div>
-        <div className="nav-links"><a href="#story">Our story</a><a href="#details">The day</a><a href="#gallery">Gallery</a><a href="#location">Location</a></div>
-        <button className="outline-button nav-save" onClick={saveDate}>Save the date <CalendarDays size={14} /></button>
+
+        <div className="nav-links">
+          <a href="#story">{t.navStory}</a>
+          <a href="#details">{t.navDay}</a>
+          <a href="#gallery">{t.navGallery}</a>
+          <a href="#location">{t.navLocation}</a>
+        </div>
+
+        <button className="outline-button nav-save" onClick={saveDate}>
+          {t.saveDate} <CalendarDays size={14} />
+        </button>
       </nav>
 
       <section className="hero" id="top">
@@ -223,7 +423,7 @@ function Invitation({ onReset, t, languageSelector }) {
         <p className="section-copy">{event.message}</p>
         <div className="ornament"><span /><Heart size={15} /><span /></div>
         <div className="count-label">THE COUNTDOWN TO OUR FOREVER</div>
-        <Countdown t={ t }/>
+        <Countdown t={t} />
       </section>
 
       <section className="details-section" id="details">
@@ -276,28 +476,28 @@ function Invitation({ onReset, t, languageSelector }) {
 function App() {
   const [opened, setOpened] = useState(false);
   const [language, setLanguage] = useState(
-  () => localStorage.getItem("everafter-language") || "en"
-);
+    () => localStorage.getItem("everafter-language") || "en"
+  );
 
-const t = translations[language] || translations.en;
+  const t = translations[language] || translations.en;
 
-useEffect(() => {
-  localStorage.setItem("everafter-language", language);
-  document.documentElement.lang = language;
-}, [language]);
+  useEffect(() => {
+    localStorage.setItem("everafter-language", language);
+    document.documentElement.lang = language;
+  }, [language]);
 
-const languageSelector = (
-  <select
-    value={language}
-    onChange={(e) => setLanguage(e.target.value)}
-    aria-label={t.language}
-    className="language-select"
-  >
-    <option value="en">English</option>
-    <option value="te">తెలుగు</option>
-    <option value="hi">हिन्दी</option>
-  </select>
-);
+  const languageSelector = (
+    <select
+      value={language}
+      onChange={(e) => setLanguage(e.target.value)}
+      aria-label={t.language}
+      className="language-select"
+    >
+      <option value="en">English</option>
+      <option value="te">తెలుగు</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+  );
   return (
     <div className="app-shell">
       <div className="ambient ambient-one" /><div className="ambient ambient-two" />
@@ -306,19 +506,33 @@ const languageSelector = (
         {!opened ? <motion.section className="opening-screen" key="opening" exit={{ opacity: 0, scale: 1.025, filter: "blur(8px)" }} transition={{ duration: .7 }}>
           <header className="opening-brand"><span className="brand-mark"><Heart size={20} /></span><span>EverAfter<small>DIGITAL INVITATIONS</small></span></header>
           <div className="opening-language">
-  {languageSelector}
-</div>
-          <div className="opening-copy"><p className="eyebrow">A MOMENT MADE JUST FOR YOU</p><h1>Some moments<br />deserve <em>their own story.</em></h1><p>A beautiful little surprise is waiting for you.</p></div>
+            {languageSelector}
+          </div>
+
+          <div className="opening-copy">
+            <p className="eyebrow">{t.openingEyebrow}</p>
+            <h1>
+              {t.openingTitle}<br />
+              <em>{t.openingTitleEm}</em>
+            </h1>
+            <p>{t.openingDescription}</p>
+          </div>
+
           <Envelope onOpen={() => setOpened(true)} t={t} />
-          <div className="opening-footer"><span>AN INVITATION TO REMEMBER</span><span>SCROLL LESS. FEEL MORE.</span></div>
+
+          <div className="opening-footer">
+            <span>{t.openingFooter}</span>
+            <span>{t.openingFooterRight}</span>
+          </div>
+
         </motion.section> : <motion.div key="invitation" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .7 }}><Invitation
-  onReset={() => {
-    setOpened(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }}
-  t={t}
-  languageSelector={languageSelector}
-/></motion.div>}
+          onReset={() => {
+            setOpened(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          t={t}
+          languageSelector={languageSelector}
+        /></motion.div>}
       </AnimatePresence>
     </div>
   );
